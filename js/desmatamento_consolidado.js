@@ -4,9 +4,9 @@
  * Grupo: Bruno Schneider, Diego Barros, Guilherme Santos e Priscilla Vasconcelos
  */
 
-var margin = {top: 20, right: 20, bottom: 30, left: 60},
-    width = 1064 - margin.left - margin.right,
-    height = 540 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 30, left: 70},
+    width = 1000 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 var formatPercent = d3.format(".0%");
 
@@ -23,7 +23,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .tickFormat(formatPercent);
+    .ticks(10);
 
 var svg = d3.select("#container-grafico").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -55,7 +55,7 @@ function cria_eixo_y() {
 }
 
 
-d3.tsv("dados/data.tsv", function(error, data) {
+d3.tsv("dados/desmatamento_consolidado.tsv", function(error, data) {
 
   data.forEach(function(d) {
     d.frequency = +d.frequency;
@@ -82,7 +82,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Frequency");
+      .text("Área Desmatada (Km²)");
 
 
  /* 1 - Grid Lines: Método para desenhar as linhas do Grid */
@@ -99,16 +99,6 @@ svg.append("g")
       .tickSize(-width, 0, 0)
       .tickFormat(""));
 
-// Desenha a linha da média
-// A ideia é desenhar por trás (antes) das barras
-var media = d3.mean(data, function(d) { return d.frequency; })
-
-svg.append("line")
-    .attr("class", "linha-da-media")
-    .attr("x1", 0)
-    .attr("y1", y(media))
-    .attr("x2", width)
-    .attr("y2", y(media));
 
 svg.selectAll(".bar")
       .data(data)
