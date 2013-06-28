@@ -1,0 +1,40 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  display: none;
+}
+
+
+/*
+ * 1 - Grid Lines: Definição do estilo das linhas do Grid
+ */
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.8;
+}
+
+.grid path { stroke-width: 0; }
+
+/*
+ * 2 - Legenda: Definição do quadro de legenda.
+ */
+.legend rect {
+  fill: none;
+  stroke: none;
+  opacity: 0.5;
+ }
+
+.linha-da-media {
+    stroke: grey;
+    stroke-width: 2;
+}
+
