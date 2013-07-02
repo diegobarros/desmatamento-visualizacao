@@ -17,16 +17,16 @@
     </div>
 </div>
 <div id="mapa"></div>
-<div id="legenda"></div>
 <script src="jquery-1.9.1.min.js"></script>
-<script src="jquery.tipsy.js"></script>
+<script type="text/javascript" src="tipsy/jquery.tipsy.js"></script>
 <script type="text/javascript" src="d3.v3.min.js"></script>
 <script type="text/javascript" src="topojson.v1.min.js"></script>
 <script type="text/javascript" src="slider/smartslider.js"></script>
+
 <script type="text/javascript">
 /* Script D3 do mapa */
 var width = "100%",
-    height = 800;
+    height = 650;
 
 var svg = d3.select("#mapa").append("svg")
     .attr("width", width)
@@ -41,9 +41,12 @@ var path = d3.geo.path()
 
 var porcentagem = d3.format(".0%");
 
-var escalaVerde = d3.scale.linear() // escala de marrom para verde
+/* cores para preenchimento */
+var desmatado = "#d19650",
+    floresta = "#00a000",
+    escalaVerde = d3.scale.linear()
     .domain([0, 1])
-    .range(["#00aa00", "#d19646"]);
+    .range([floresta, desmatado]);
 
 var anoPadrao = 2011;
 
@@ -93,21 +96,49 @@ function AlterarCores(ano) {
                     "" : (" - " + porcentagem(areaDesmatada[ano][d.id]) + " desmatado (" + ano +")")); })
 }
 
-/* Legenda */
-d3.select("#legenda")
-    .append("svg")
-    .append("rect")
-    .attr("x",20)
-    .attr("y",200)
-    .attr("width", 200)
-    .attr("height", 20);
-svg.append("rect")
-    .attr("x",20)
-    .attr("y", height - 30)
-    .attr("width", 200)
-    .attr("height", 20);
+/* Legenda usando os valores definidos na escala de cores*/
+var gradient = svg.append("svg:defs")
+  .append("svg:linearGradient")
+    .attr("id", "gradient")
+    .attr("x1", "0%")
+    .attr("y1", "50%")
+    .attr("x2", "100%")
+    .attr("y2", "50%")
+    .attr("spreadMethod", "pad");
 
-/* http://www.w3schools.com/svg/svg_grad_linear.asp  */ 
+gradient.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", floresta)
+    .attr("stop-opacity", 1);
+
+gradient.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", desmatado)
+    .attr("stop-opacity", 1);
+
+svg.append("svg:rect")
+    .attr("x",30)
+    .attr("y", height - 35)
+    .attr("width", 200)
+    .attr("height", 20)
+    .style("fill", "url(#gradient)");
+
+svg.append("text")
+    .attr("x", 20)
+    .attr("y", height - 40)
+    .html("0%");
+
+svg.append("text")
+    .attr("x", 210)
+    .attr("y", height - 40)
+    .html("100%");
+
+svg.append("text")
+    .attr("x", 70)
+    .attr("y", height - 1)
+    .html("desmatamento");
+
+/* Ver tambem: http://www.w3schools.com/svg/svg_grad_linear.asp  */ 
 
 /* Detalhes sob demanda */
 $('svg path').tipsy({

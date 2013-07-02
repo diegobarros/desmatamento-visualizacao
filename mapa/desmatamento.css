@@ -23,9 +23,6 @@ svg :hover {
     float: left;
     width: 30%;
     background-color: rgba(0,0,255,50);
-}
-
-#legenda rect {
     stroke: red;
     fill: green;
 }
