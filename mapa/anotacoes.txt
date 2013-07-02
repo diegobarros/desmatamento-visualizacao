@@ -1,0 +1,20 @@
+Comando para converter de shp para GeoJSON:
+$ ogr2ogr -f GeoJSON municipios_br.json municipios_br.shp
+
+Conversão dos caracteres para UTF-8:
+$ iconv -f ibm850 -t utf8 -o municipios_br.utf8.json municipios_br.json
+
+Tutorial para D3 com GeoJSON:
+http://bost.ocks.org/mike/map/
+
+Conversao para TopoJSON:
+$ topojson --id-property CODIGO_MUN -p estado=CODIGO_UF -p nome=NOME_2 -p regiao=REGIAO -o municipios.3.topo.json municipios_br.utf8.json
+quantization: bounds -73.990944 -33.750862 -32.37888699999999 5.272224900000005 (spherical)
+quantization: maximum error 315m (0.00284°)
+prune: retained 16303 / 16303 arcs (100%)
+
+O TopoJSON usa o nome do arquivo no nome dos atributos, entao preciso tirar os pontos:
+$ sed 's/municipios_br\.utf8/municipios/g' municipios.3.topo.json >municipios.4.topo.json
+
+Exemplo Importante:
+http://techslides.com/d3-world-maps-tooltips-zooming-and-queue/

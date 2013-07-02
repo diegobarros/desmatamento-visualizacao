@@ -1,0 +1,22 @@
+.slider.ano
+{
+    background-color: #D7D7D7;
+    border: solid 1px #B6B6B6;
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+}
+.inner.ano
+{
+    background-color: #DFECF4;
+    -moz-box-shadow: 0 1px 2px rgba(17, 35, 45, 0.6) inset;
+    -webkit-box-shadow: 0 1px 2px rgba(17, 35, 45, 0.6) inset;
+}
+.lgripper.ano
+{
+    background: url(tracker.png) 0px 0px no-repeat;
+}
+
+.ticks {
+    background-color: green;
+}
+

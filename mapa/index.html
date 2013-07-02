@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>Mapa do Desmatamento</title>
+    <link rel="stylesheet" href="desmatamento.css">
+    <link rel="stylesheet" href="tipsy.css">
+    <link rel="stylesheet" href="slider/smartslider.css">
+</head>
+<body>
+<h1>Desmatamento na região amazônica</h1>
+<div id="regiao-ano">
+    <!-- Aqui fica o slider para selecionar o ano -->
+    <!-- Não consegui centralizar -->
+        <div id="bloco-ano" style="margin-left: 394px; float: left; position: relative">
+        <div id="input-ano" style="position: relative; float:left"></div>
+        <div id="ano" style="clear: both; text-align: center;"></div>
+    </div>
+</div>
+<div id="mapa"></div>
+<div id="legenda"></div>
+<script src="jquery-1.9.1.min.js"></script>
+<script src="jquery.tipsy.js"></script>
+<script type="text/javascript" src="d3.v3.min.js"></script>
+<script type="text/javascript" src="topojson.v1.min.js"></script>
+<script type="text/javascript" src="slider/smartslider.js"></script>
+<script type="text/javascript">
+/* Script D3 do mapa */
+var width = "100%",
+    height = 800;
+
+var svg = d3.select("#mapa").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var projection = d3.geo.mercator()
+    .scale(1300)
+    .rotate([60,5]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var porcentagem = d3.format(".0%");
+
+var escalaVerde = d3.scale.linear() // escala de marrom para verde
+    .domain([0, 1])
+    .range(["#00aa00", "#d19646"]);
+
+var anoPadrao = 2011;
+
+// Carregar dados de desmatamento
+var areaDesmatada = new Object();
+var anos = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011];
+anos.forEach(function(ano) {
+    areaDesmatada[ano] = new Object();
+    d3.tsv("dados/dados"+ano+".tsv", function(error, data) {
+        data.forEach(function(d) {
+            var desmatado = d.Desmatado / d.AreaKm2;
+            // Obs.: Os dados indicam mais de 100% de desmatamento em alguns casos.
+            areaDesmatada[ano][d.CodIbge] = desmatado;
+        });
+    }); // tsv function
+}); // foreach ano
+
+// Carregar a geometria dos municípios
+d3.json("municipios.5.topo.json", function(error, dados) {
+    var municipios = topojson.feature(dados, dados.objects.municipios).features;
+    svg.selectAll(".municipio")
+        .data(municipios).enter()
+            .append("path")
+            .attr("class", function(d) {
+                return (areaDesmatada[anoPadrao][d.id] === undefined) ? "sem_dados" : "municipio"; })
+            .attr("estado", function(d) { return d.properties.estado; })
+            .attr("fill", function(d) {
+                return (areaDesmatada[anoPadrao][d.id] === undefined) ? 
+                    "none" : escalaVerde(areaDesmatada[anoPadrao][d.id]); })
+            .attr("title", function(d) {
+                return d.properties.nome + ", " + d.properties.estado + 
+                    ((areaDesmatada[anoPadrao][d.id] === undefined) ? 
+                        "" : (" - " + porcentagem(areaDesmatada[anoPadrao][d.id]) + " desmatado")); })
+            .attr("d", path)
+            .attr("mun", function(d) {
+                return d.id; });
+}); // fim d3.json
+
+// Altera as cores e o titulos dos municipios
+function AlterarCores(ano) {
+    d3.selectAll(".municipio")
+        .attr("fill", function(d) {
+            return (areaDesmatada[ano][d.id] === undefined) ? "none" : escalaVerde(areaDesmatada[ano][d.id]); })
+        .attr("title", function(d) {
+            return d.properties.nome + ", " + d.properties.estado + 
+                ((areaDesmatada[ano][d.id] === undefined) ? 
+                    "" : (" - " + porcentagem(areaDesmatada[ano][d.id]) + " desmatado (" + ano +")")); })
+}
+
+/* Legenda */
+d3.select("#legenda")
+    .append("svg")
+    .append("rect")
+    .attr("x",20)
+    .attr("y",200)
+    .attr("width", 200)
+    .attr("height", 20);
+svg.append("rect")
+    .attr("x",20)
+    .attr("y", height - 30)
+    .attr("width", 200)
+    .attr("height", 20);
+
+/* http://www.w3schools.com/svg/svg_grad_linear.asp  */ 
+
+/* Detalhes sob demanda */
+$('svg path').tipsy({
+    html: true,
+    fade: true,
+    gravity: 's',
+    title: function () {
+        return "tipsy title";
+    }  
+});
+
+/* Script do slider de ano */
+$(document).ready(function() {
+    $('#input-ano').strackbar({ callback: onTick, sliderHeight: 6, sliderWidth: 400,
+                                borderWidth: 3,
+                                style: 'style2', animate: true, ticks: true, 
+                                labels: true, trackerHeight: 23, trackerWidth: 23,
+                                defaultValue: anoPadrao, minValue: 2000, maxValue: 2011 });
+    });
+
+function onTick(value) {
+    $('#ano').html("Apresentando dados de " + value);
+    AlterarCores(value);
+}
+
+function AjustarPosicaoSlider() {
+    var blocoAno = $('#bloco-ano');
+    console.log("blocoAno.clientWidth: " + blocoAno.clientWidth);
+    $('#regiao-ano').css('width', blocoAno.clientWidth).css('height', blocoAno.clientHeight);
+}
+
+$(document).load("AjustarPosicaoSlider");
+
+</script>
+</body>

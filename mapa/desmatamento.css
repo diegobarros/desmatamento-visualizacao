@@ -1,0 +1,32 @@
+body {
+    background-color: #ddd
+}
+
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+svg path {
+    stroke-width: 0px;
+}
+
+
+svg :hover {
+   stroke: white;
+}
+
+/* atributos de municipios sem dados (fora da regiao amazonica) */
+.sem_dados { stroke: none; fill: #c6c670 }
+
+#legenda{
+    float: left;
+    width: 30%;
+    background-color: rgba(0,0,255,50);
+}
+
+#legenda rect {
+    stroke: red;
+    fill: green;
+}
+
