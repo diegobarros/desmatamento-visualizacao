@@ -21,7 +21,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    padding-top: 70px;
+    padding-top: 60px;
     padding-bottom: 40px;
 }
 
@@ -97,7 +97,7 @@ textarea {
   #container-grafico {
   	padding: 4px;
   	font: 10px sans-serif;
-	margin: 20px auto;
+	margin: 10px auto;
 	border: 1px solid #CCCCCC;
 	background-color: #FFFFFF;
   }
@@ -126,6 +126,22 @@ textarea {
 #grupo-botao-ordenacao { margin-left: 8px; }
 #rodape-grafico { margin-top: 20px;	}
 #rodape-grafico span { font-weight: bold; }
+
+
+#titulo {
+
+	width: 230px;
+	height: 45px;
+	float:left;
+	position: relative;
+}
+
+#slider {
+	width: 900px;
+	height: 45px;
+	float: left;
+	position: relative;
+}
 
 /* ==========================================================================
    Helper classes
