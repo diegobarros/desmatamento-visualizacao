@@ -1,22 +1,62 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-    <title>Mapa do Desmatamento</title>
+	
+	
+	<link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/vendor/bootstrap-responsive.min.css">
+	
+   	<title>TP2 - Visualização de Dados: Desmatamento Amazônia</title>
+   
     <link rel="stylesheet" href="desmatamento.css">
     <link rel="stylesheet" href="tipsy.css">
     <link rel="stylesheet" href="slider/smartslider.css">
+     
 </head>
 <body>
-<h1>Desmatamento na região amazônica</h1>
-<div id="regiao-ano">
-    <!-- Aqui fica o slider para selecionar o ano -->
-    <!-- Não consegui centralizar -->
-        <div id="bloco-ano" style="margin-left: 394px; float: left; position: relative">
-        <div id="input-ano" style="position: relative; float:left"></div>
-        <div id="ano" style="clear: both; text-align: center;"></div>
-    </div>
+	
+	<header class="navbar navbar-inverse navbar-fixed-top">
+    	<nav class="navbar-inner">
+        	<div class="container">
+            	<a class="brand" href="../index.html">Desmatamento Amazônia</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+    	 <header id="cabecalho-grafico">
+            <h2>Mapa Região Amazônica</h2>
+            
+         </header>
+        
+         <div id="container-grafico">
+         	
+         	 <div id="regiao-ano">
+    		<!-- Aqui fica o slider para selecionar o ano -->
+   		 	<!-- Não consegui centralizar -->
+        	<div id="bloco-ano" style="margin-left: 394px; float: left; position: relative">
+        	<div id="input-ano" style="position: relative; float:left"></div>
+        	<div id="ano" style="clear: both; text-align: center;"></div>
+    		</div>
+
+         	<div id="mapa"> </div>
+
+         </div>
+        
+	</div>
+	
+         
+         
+         
 </div>
-<div id="mapa"></div>
+ 
+ 
+ 
+ 
+ 
+
 <script src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="tipsy/jquery.tipsy.js"></script>
 <script type="text/javascript" src="d3.v3.min.js"></script>
