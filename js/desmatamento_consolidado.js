@@ -5,7 +5,7 @@
  */
 
 var margin = {top: 20, right: 20, bottom: 30, left: 70},
-    width = 1000 - margin.left - margin.right,
+    width = 1024 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var formatPercent = d3.format(".0%");
@@ -59,7 +59,7 @@ d3.tsv("dados/desmatamento_consolidado.tsv", function(error, data) {
 
   data.forEach(function(d) {
     d.frequency = +d.frequency;
-    d.name = "Frequency"
+    d.name = "Área Desmatada"
   });
 
   // Colocar valores numa variavel externa para nao precisar colocar todo o
@@ -79,13 +79,13 @@ d3.tsv("dados/desmatamento_consolidado.tsv", function(error, data) {
       .call(yAxis)
     .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 6)
+      .attr("y", 4)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Área Desmatada (Km²)");
 
 
- /* 1 - Grid Lines: Método para desenhar as linhas do Grid */
+ /* 1 - Grid Lines: Método para desenhar as linhas do Grid 
  svg.append("g")
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
@@ -98,8 +98,7 @@ svg.append("g")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
       .tickFormat(""));
-
-
+*/
 svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
@@ -118,7 +117,7 @@ svg.selectAll(".bar")
  */
 legend = svg.append("g")
   .attr("class","legend")
-  .attr("transform","translate(865,3)")
+  .attr("transform","translate(820,-4)")
   .style("font-size","14px")
   .call(d3.legend);
 
