@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor/bootstrap-responsive.min.css">
-
+        <link rel="stylesheet" href="css/area_desmatamento_anual.css">
+        <link rel="stylesheet" href="css/vendor/tipsy.css">
     </head>
     <body>
         <header class="navbar navbar-inverse navbar-fixed-top">
@@ -26,17 +27,12 @@
 
         <div class="container">
             <header id="cabecalho-grafico">
-                <h1>Desmatamento Amazônia</h1>
-                <h2>Visualizações</h2>
+                <h2>Área de Desmatamento Anual Amazônia</h2>
             </header>
 
 
-            <div>
-                <ul>
-                    <li><a href="desmatamento_consolidado.html">Desmatamento Consolidado</a></li>
-                    <li><a href="mapa/index.html">Mapa Desmatamento</a></li>
-                     <li><a href="area_desmatamento_anual.html">Área de Desmatamento Anual</a></li>
-                </ul>
+            <div id="container-grafico">
+                <!-- Aqui o D3 colocará o gráfico em tempo de execução -->
             </div>
 
            
@@ -47,10 +43,19 @@
 
         </div>
 
+
         <!-- Inicialização dos Scripts -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script>window.d3 || document.write('<script src="js/vendor/d3.v3.min.js"><\/script>')</script>
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
- 
+        <script src="js/vendor/jquery.tipsy.js"></script>
+        <script src="js/vendor/d3.legend.js"></script>
+        <!-- Link para o nosso código D3 -->
+        <script src="js/area_desmatamento_anual.js" charset="utf-8"></script>
+
     </body>
 </html>
