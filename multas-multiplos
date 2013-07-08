@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Desmatamento Amazônia: Multas Aplicadas</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="css/multas_consolidado.css">
+        <link rel="stylesheet" href="css/vendor/tipsy.css">
+    </head>
+    <body>
+        <header class="navbar navbar-inverse navbar-fixed-top">
+            <nav class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="index.html">Desmatamento Amazônia</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <header id="cabecalho-grafico">
+                <h3>Multas Aplicadas nos Municípios Decorrentes de Ações de Desmatamento.</h3>
+                <h3>Dados Relativos à Área do Município.</h3>
+            </header>
+
+
+            <div id="imagens">    
+            <a href="mapas-tematicos/3.MultasRelativas2006.jpeg"><img src="mapas-tematicos/3.MultasRelativas2006.jpeg" title="Multas Aplicadas, por município, em 2006" alt="Multas Aplicadas, por município, em 2006"></a>
+            <a href="mapas-tematicos/3.MultasRelativas2007.jpeg"><img src="mapas-tematicos/3.MultasRelativas2007.jpeg" title="Multas Aplicadas, por município, em 2007" alt="Multas Aplicadas, por município, em 2007"></a>
+            <a href="mapas-tematicos/3.MultasRelativas2008.jpeg"><img src="mapas-tematicos/3.MultasRelativas2008.jpeg" title="Multas Aplicadas, por município, em 2008" alt="Multas Aplicadas, por município, em 2008"></a>
+            <a href="mapas-tematicos/3.MultasRelativas2009.jpeg"><img src="mapas-tematicos/3.MultasRelativas2009.jpeg" title="Multas Aplicadas, por município, em 2009" alt="Multas Aplicadas, por município, em 2009"></a>
+            <a href="mapas-tematicos/3.MultasRelativas2010.jpeg"><img src="mapas-tematicos/3.MultasRelativas2010.jpeg" title="Multas Aplicadas, por município, em 2010" alt="Multas Aplicadas, por município, em 2010"></a>
+            <a href="mapas-tematicos/3.MultasRelativas2011.jpeg"><img src="mapas-tematicos/3.MultasRelativas2011.jpeg" title="Multas Aplicadas, por município, em 2011" alt="Multas Aplicadas, por município, em 2011"></a>
+            </div>
+            
+            <footer>
+                <p>Grupo: Bruno Schneider, Diego Barros, Guilherme Santos e Priscilla Vasconcelos.
+                <p>&copy; All Rights Reserved, 2013</p>
+            </footer>
+
+        </div>
+
+
+        <!-- Inicialização dos Scripts -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/jquery.tipsy.js"></script>
+
+    </body>
+</html>
