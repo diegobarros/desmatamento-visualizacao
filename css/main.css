@@ -95,7 +95,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
   #container-grafico {
-  	padding: 6px 2px;
+  	padding: 10px 20px;
   	font: 10px sans-serif;
 	margin: 10px auto;
 	border: 1px solid #CCCCCC;
@@ -142,6 +142,11 @@ textarea {
 	float: left;
 	position: relative;
 }
+
+footer {
+	margin: 10px 1px;
+}
+
 
 /* ==========================================================================
    Helper classes
