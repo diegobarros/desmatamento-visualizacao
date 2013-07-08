@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Desmatamento Amazônia: Incremento do Desmatamento</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="css/multas_consolidado.css">
+        <link rel="stylesheet" href="css/vendor/tipsy.css">
+    </head>
+    <body>
+        <header class="navbar navbar-inverse navbar-fixed-top">
+            <nav class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="index.html">Desmatamento Amazônia</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <header id="cabecalho-grafico">
+                <h3>Incremento do Desmatamento ao Longo dos Anos.</h3>
+                <h3>Dados Normalizados pela Área do Município.</h3>
+            </header>
+
+
+            <div id="imagens">
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2000-2001.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2000-2001.jpeg" title="Incremento do Desmatado de 2000 para 2001, por município" alt="Incremento do Desmatado de 2000 para 2001, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2001-2002.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2001-2002.jpeg" title="Incremento do Desmatado de 2001 para 2002, por município" alt="Incremento do Desmatado de 2001 para 2002, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2002-2003.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2002-2003.jpeg" title="Incremento do Desmatado de 2002 para 2003, por município" alt="Incremento do Desmatado de 2002 para 2003, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2003-2004.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2003-2004.jpeg" title="Incremento do Desmatado de 2003 para 2004, por município" alt="Incremento do Desmatado de 2003 para 2004, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2004-2005.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2004-2005.jpeg" title="Incremento do Desmatado de 2004 para 2005, por município" alt="Incremento do Desmatado de 2004 para 2005, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2005-2006.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2005-2006.jpeg" title="Incremento do Desmatado de 2005 para 2006, por município" alt="Incremento do Desmatado de 2005 para 2006, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2006-2007.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2006-2007.jpeg" title="Incremento do Desmatado de 2006 para 2007, por município" alt="Incremento do Desmatado de 2006 para 2007, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2007-2008.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2007-2008.jpeg" title="Incremento do Desmatado de 2007 para 2008, por município" alt="Incremento do Desmatado de 2007 para 2008, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2008-2009.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2008-2009.jpeg" title="Incremento do Desmatado de 2008 para 2009, por município" alt="Incremento do Desmatado de 2008 para 2009, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2009-2010.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2009-2010.jpeg" title="Incremento do Desmatado de 2009 para 2010, por município" alt="Incremento do Desmatado de 2009 para 20010, por município"></a>
+            <a href="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2010-2011.jpeg"><img src="mapas-tematicos/2.Incremento Desmatamento Relativo a Area do Municipio 2010-2011.jpeg" title="Incremento do Desmatado de 2010 para 2011, por município" alt="Incremento do Desmatado de 2010 para 2011, por município"></a>
+            </div>
+            
+            <footer>
+                <p>Grupo: Bruno Schneider, Diego Barros, Guilherme Santos e Priscilla Vasconcelos.
+                <p>&copy; All Rights Reserved, 2013</p>
+            </footer>
+
+        </div>
+
+
+        <!-- Inicialização dos Scripts -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/jquery.tipsy.js"></script>
+
+    </body>
+</html>
