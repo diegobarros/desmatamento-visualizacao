@@ -145,6 +145,7 @@ textarea {
 
 footer {
 	margin: 10px 1px;
+	clear: both;
 }
 
 
@@ -336,4 +337,14 @@ footer {
     h3 {
         page-break-after: avoid;
     }
+}
+/* Aqui fica o estilo da imagens dos mapas temáticos apresentados como pequenos múltiplos */
+#imagens {
+    width: 100%;
+}
+#imagens img {
+    width: 200px;
+    height: 121px;
+    float: left;
+    padding: 5px;
 }
